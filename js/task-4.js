@@ -1,8 +1,10 @@
-// Napisz funkcję strzałkową getTotalBalanceByGender(users, gender), która przyjmuje dwa parametry:
-//  * pierwszy parametr users — tablica obiektów użytkowników,
-//  * drugi parametr gender — ciąg znaków przechowujący płeć.
-// Funkcja powinna używać łańcucha wywołań metod i zwracać saldo użytkowników
-//     (właściwość balance), których płeć(właściwość gender) odpowiada wartości parametru gender.
+const getTotalBalanceByGender = (users, gender) => {
+  return users
+    .filter((user) => user.gender === gender)
+    .map((user) => user.balance)
+    .reduce((total, balance) => total + balance, 0);
+};
+
 const allUsers = [
   {
     name: "Moore Hensley",
